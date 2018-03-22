@@ -25,11 +25,8 @@ class main:
         self.frameb = Frame(self.frame)
         self.frameb.pack(fill="both", expand=True)
         self.Start1 = Button(self.frameb, text='Click here to start\ndouble player',font="Click, 15", height=4, command=self.start1,
-                             bg='white', fg='purple')
-        self.Start1.pack(fill="both", expand=True, side=RIGHT)
-        self.Start2 = Button(self.frameb, text='Click here to start\nsingle player',font="Click, 15", height=4, command=self.start2,
                              bg='purple', fg='white')
-        self.Start2.pack(fill="both", expand=True, side=LEFT)
+        self.Start1.pack(fill="both", expand=True, side=RIGHT)
 
     def start1(self):
         self.canvas.delete(ALL)
@@ -40,14 +37,6 @@ class main:
         self.i = 0
         self.j = False
 
-    def start2(self):
-        self.canvas.delete(ALL)
-        self.label['text'] = ('Tic Tac Toe Game')
-        self.canvas.bind("<ButtonPress-2>", self.sgplayer)
-        self._board()
-        self.TTT = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-        self.i = 0
-        self.j = False
 
     def _board(self):
         self.canvas.create_rectangle(0, 0, 300, 300,fill="yellow",width=4, outline="black")
